@@ -1,6 +1,6 @@
 # ⚡ NMG Forge — Kanban Board
 
-> **Qualifier Kanban Board built by a Two-Agent AI System**
+> **Full-stack Kanban Board built for the NMG Forge Qualifier using a collaborative two-agent development workflow**
 > 
 ![Laravel](https://img.shields.io/badge/Laravel-11-FF2D20?logo=laravel&logoColor=white)
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
@@ -140,4 +140,4 @@ nmg-forge/
 
 ### Built for NMG Forge 
 
-**Laravel • React • SQLite • Hermes • OpenClaw**
+****Built with Laravel, React, SQLite, and a collaborative AI-assisted development workflow.****
