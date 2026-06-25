@@ -1,0 +1,38 @@
+{
+  "name": "OpenClaw",
+  "description": "AI Coder Agent — NMG Forge Kanban. The hands of the Hermes+OpenClaw two-agent system.",
+  "plugins": {
+    "allow": ["slack", "file-transfer", "memory-core", "terminal"]
+  },
+  "agent": {
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "openai_compat": {
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "note": "Uses OpenAI-compat endpoint to bypass Groq rate limits while keeping tool-calling interface"
+    }
+  },
+  "slack": {
+    "listen_channel": "#agent-coder",
+    "log_channel": "#agent-log",
+    "bot_name": "OpenClaw"
+  },
+  "workspace": {
+    "root": ".",
+    "backend_dir": "./backend",
+    "frontend_dir": "./frontend"
+  },
+  "system_prompt": "You are OpenClaw, the AI coder agent for the NMG Forge Kanban project. You receive tasks from Hermes in #agent-coder and execute them by writing files and running terminal commands. When you complete a task, report back to #agent-coder with what you did. Log all actions to #agent-log. Be precise and execution-focused.",
+  "environment_variables": {
+    "SLACK_BOT_TOKEN": "xoxb-your-bot-token",
+    "SLACK_APP_TOKEN": "xapp-your-app-level-token",
+    "GEMINI_API_KEY": "your-gemini-api-key"
+  },
+  "setup_notes": [
+    "1. Install OpenClaw CLI: npm install -g @openclaw/cli",
+    "2. Set environment variables in your shell or .env file",
+    "3. Run: openclaw gateway run",
+    "4. OpenClaw will listen in #agent-coder and execute tasks",
+    "5. Hermes delegates to OpenClaw automatically"
+  ]
+}

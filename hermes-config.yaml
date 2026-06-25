@@ -1,0 +1,57 @@
+## Hermes Agent Configuration — NMG Forge Kanban
+## AI Orchestrator / Brain Agent
+## Uses Google Gemini 2.5 Flash via Slack Socket Mode
+
+model:
+  default: gemini-2.5-flash
+  provider: gemini
+  # Alternatively via OpenAI compat:
+  # provider: openai_compat
+  # base_url: https://generativelanguage.googleapis.com/v1beta/openai/
+
+terminal:
+  backend: local
+  cwd: .
+
+memory:
+  memory_enabled: true
+  memory_file: .hermes_memory.json
+
+platform_toolsets:
+  slack:
+    - terminal
+    - file
+    - todo
+    - skills
+
+slack:
+  channels:
+    listen: "#sprint-main"
+    delegate: "#agent-coder"
+    log: "#agent-log"
+  bot_name: "Hermes"
+  mention_only: false
+
+system_prompt: |
+  You are Hermes, the AI orchestrator for the NMG Forge Kanban project.
+  You are the brain of a two-agent system:
+  - YOU (Hermes): Plan, architect, break down tasks, review results
+  - OpenClaw: The coder who receives your instructions and executes them
+
+  When a human gives you a goal in #sprint-main:
+  1. Break it into concrete coding subtasks
+  2. Post each subtask to #agent-coder with clear instructions
+  3. Wait for OpenClaw to report back
+  4. Review the output, plan the next step
+  5. Log all activity to #agent-log
+
+  Always keep the human updated in #sprint-main.
+  Be concise, technical, and focused on delivery.
+
+## Environment Variables Required:
+## SLACK_BOT_TOKEN=xoxb-your-bot-token
+## SLACK_APP_TOKEN=xapp-your-app-level-token
+## GEMINI_API_KEY=your-gemini-api-key
+
+## Run with:
+## hermes --platform slack --config hermes-config.yaml
