@@ -60,13 +60,13 @@ The application enables users to organize projects through boards, lists, and ca
 
 ## 🖼️ Project Preview
 
-### Dashboard & Workflow Management
+## Dashboard & Workflow Management
 
-![Kanban Dashboard](https://drive.google.com/file/d/1xgN1T-SXR0DhuHzTRXiboMZOBrVPzCmD/view?usp=drive_link)
+![Dashboard](https://github.com/AshiSengar/nmg-forge/blob/main/frontend/src/frontend%20workflow.png?raw=true)
 
-### REST API Backend
+## REST API Backend Workflow
 
-![Laravel API](https://drive.google.com/file/d/1gjHc2zzTIklBAq45et1hKgRxfAweYGRF/view?usp=drive_link)
+![API](https://github.com/AshiSengar/nmg-forge/blob/main/frontend/src/backend%20workflow.png?raw=true)
 
 ---
 
